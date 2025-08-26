@@ -27,6 +27,24 @@
       "name": "Release ScoutWeb (ScoutWeb)",
       "program": "${workspaceFolder:scout.clutch.engineering}/ScoutWeb/.build/release/ScoutWeb",
       "preLaunchTask": "swift: Build Release ScoutWeb (ScoutWeb)"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:scout.clutch.engineering}/hogmobile.com",
+      "name": "Debug hogmobile (hogmobile.com)",
+      "program": "${workspaceFolder:scout.clutch.engineering}/hogmobile.com/.build/debug/hogmobile",
+      "preLaunchTask": "swift: Build Debug hogmobile (hogmobile.com)"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:scout.clutch.engineering}/hogmobile.com",
+      "name": "Release hogmobile (hogmobile.com)",
+      "program": "${workspaceFolder:scout.clutch.engineering}/hogmobile.com/.build/release/hogmobile",
+      "preLaunchTask": "swift: Build Release hogmobile (hogmobile.com)"
     }
   ]
 }

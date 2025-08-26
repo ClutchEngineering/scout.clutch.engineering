@@ -4,7 +4,9 @@
       "WebSearch",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:hub.docker.com)"
+      "WebFetch(domain:hub.docker.com)",
+      "WebFetch(domain:hogmobile.com)",
+      "Bash(swift run:*)"
     ],
     "deny": [],
     "ask": []

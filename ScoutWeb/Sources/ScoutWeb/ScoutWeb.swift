@@ -3,11 +3,17 @@ import Foundation
 
 import Slipstream
 
+extension Condition {
+  static var mobileOnly: Condition { Condition.within(Breakpoint.small..<Breakpoint.medium) }
+  static var desktop: Condition { Condition.startingAt(.medium) }
+}
+
 @main
 struct ScoutWeb: ParsableCommand {
   mutating func run() throws {
     let sitemap: Sitemap = [
-      "index.html": HomePage()
+      "index.html": Home(),
+      "thank_you/index.html": ThankYou(),
     ]
 
     // Assumes this file is located in a Sources/ sub-directory of a Swift package.

@@ -5,7 +5,7 @@ npm-debug.log*
 # Build outputs
 .build/
 site/css/main.css
-site/index.html
+site/**.html
 
 # Swift Package Manager
 .swiftpm/
