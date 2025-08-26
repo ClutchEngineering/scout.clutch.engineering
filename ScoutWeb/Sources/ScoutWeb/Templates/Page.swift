@@ -81,7 +81,7 @@ struct Page<Content: View>: View {
               .modifier(ClassModifier(add: "cursor-pointer"))
               Text {
                 DOMString("Copyright © \(Calendar.current.component(.year, from: Date())) ")
-                Link("fearless design, LLC", destination: URL(string: "https://featherless.design"))
+                Link("Clutch Engineering", destination: URL(string: "https://clutch.engineering"))
                   .textColor(.rose, darkness: 600)
                   .textColor(.rose, darkness: 400, condition: .dark)
                   .fontWeight(600)
