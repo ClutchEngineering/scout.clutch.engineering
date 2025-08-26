@@ -26,14 +26,20 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
+      - name: Select Xcode
+        run: sudo xcode-select -s "/Applications/Xcode_16.4.app"
+
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Install Tailwind CSS
         run: npm install -D tailwindcss@3
+
       - name: Generate site
         run: cd ScoutWeb && swift run ScoutWeb && cd .. && npx tailwindcss -i tailwind.css -o ./site/css/main.css --minify
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
