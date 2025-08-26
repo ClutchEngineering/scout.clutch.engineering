@@ -1,0 +1,45 @@
+{
+  "name": "Scout Web Development",
+  "image": "swift:6.1",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "username": "swift",
+      "uid": "1000",
+      "gid": "1000"
+    },
+    "ghcr.io/swift-server-community/swift-devcontainer-features/foundationnetworking:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "swiftlang.swift-vscode",
+        "ms-vscode.live-server"
+      ],
+      "settings": {
+        "tailwindCSS.includeLanguages": {
+          "swift": "html"
+        },
+        "tailwindCSS.experimental.classRegex": [
+          ["class: \"([^\"]*)", "([a-zA-Z0-9\\-\\:\\/]+)"]
+        ],
+        "lldb.library": "/usr/lib/liblldb.so"
+      }
+    }
+  },
+  "postCreateCommand": "npm install -g tailwindcss@3 && npm install -g live-server && npm install -g @anthropic-ai/claude-code",
+  "postStartCommand": "nohup bash -c 'live-server /workspaces/scout.clutch.engineering/site --port=8888 --host=0.0.0.0 --no-browser &' >/dev/null 2>&1",
+  "forwardPorts": [3000, 8080, 8888],
+  "runArgs": [
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined"
+  ],
+  "remoteUser": "swift"
+}

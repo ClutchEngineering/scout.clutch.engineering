@@ -1,0 +1,10 @@
+{
+  "name": "scout-web",
+  "version": "1.0.0",
+  "description": "Scout Web development environment",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {}
+}

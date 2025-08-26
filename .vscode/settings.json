@@ -1,0 +1,13 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "swift": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["class: \"([^\"]*)", "([a-zA-Z0-9\\-\\:\\/]+)"]
+  ],
+  "files.associations": {
+    "*.swift": "swift"
+  },
+  "liveServer.settings.root": "/site",
+  "liveServer.settings.port": 8080
+}

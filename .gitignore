@@ -1,0 +1,26 @@
+# Dependency directories
+node_modules/
+npm-debug.log*
+
+# Build outputs
+.build/
+site/css/main.css
+site/index.html
+
+# Swift Package Manager
+.swiftpm/
+
+# Xcode
+*.xcodeproj
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# IDE
+.vscode/settings.json.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+nohup.out
+

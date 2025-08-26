@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "swift",
+      "request": "launch",
+      "name": "Debug ScoutWeb",
+      "program": "${workspaceFolder}/ScoutWeb/.build/debug/ScoutWeb",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build Swift Package"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:scout.clutch.engineering}/ScoutWeb",
+      "name": "Debug ScoutWeb (ScoutWeb)",
+      "program": "${workspaceFolder:scout.clutch.engineering}/ScoutWeb/.build/debug/ScoutWeb",
+      "preLaunchTask": "swift: Build Debug ScoutWeb (ScoutWeb)"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:scout.clutch.engineering}/ScoutWeb",
+      "name": "Release ScoutWeb (ScoutWeb)",
+      "program": "${workspaceFolder:scout.clutch.engineering}/ScoutWeb/.build/release/ScoutWeb",
+      "preLaunchTask": "swift: Build Release ScoutWeb (ScoutWeb)"
+    }
+  ]
+}
