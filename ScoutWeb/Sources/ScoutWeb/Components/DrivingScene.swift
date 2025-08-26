@@ -26,6 +26,7 @@ struct DrivingScene<Content: View>: View {
         VStack(alignment: .leading, spacing: 0) {
           Hero()
         }
+        .margin(.bottom, 112)
         VStack(alignment: .center, spacing: 16) {
           content()
         }

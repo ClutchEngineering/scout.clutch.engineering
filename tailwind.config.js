@@ -131,6 +131,14 @@ module.exports = {
           'display': 'inline-block',
           'width': '100%',
           'margin-top': '-40px',
+        },
+        '.dotted-background': {
+          'background-image': 'radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px)',
+          'background-size': '3px 3px',
+        },
+        '.dotted-background-dark': {
+          'background-image': 'radial-gradient(circle, rgba(0, 0, 0, 0.3) 1px, transparent 1px)',
+          'background-size': '2px 2px',
         }
       })
     }),

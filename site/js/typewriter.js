@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'gas stations',
     'EV chargers',
     'bathrooms',
-    'coffee shops',
+    'coffee',
     'ramen',
     'mangos',
     'mechanics'
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Use fast typing (60ms) for repeated characters, otherwise random delay
         const isRepeatedChar = currentChar === previousChar;
-        const delay = isRepeatedChar ? 80 : Math.random() * (200 - 80) + 80;
+        const delay = isRepeatedChar ? 50 : Math.random() * (120 - 50) + 50;
         setTimeout(typeChar, delay);
       } else {
         // Finished typing, wait then delete
-        setTimeout(deletePhrase, 2000);
+        setTimeout(deletePhrase, 750);
       }
     }
 
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Finished deleting, reset counter and move to next phrase
         deleteCount = 0;
         currentPhrase = (currentPhrase + 1) % phrases.length;
-        setTimeout(typePhrase, 750); // Wait before next phrase
+        setTimeout(typePhrase, 400); // Wait before next phrase
       }
     }
 

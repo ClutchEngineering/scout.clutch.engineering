@@ -100,7 +100,7 @@ struct Page<Content: View>: View {
         .background(.zinc, darkness: 800, condition: .dark)
       }
       .antialiased()
-      .className("bg-scout-yellow dark:bg-scout-brown")
+      .className("bg-scout-yellow dotted-background dark:dotted-background-dark")
       .background(backgroundColor)
       .background(darkModeBackgroundColor, condition: .dark)
     }
