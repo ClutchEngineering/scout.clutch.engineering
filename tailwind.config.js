@@ -21,15 +21,15 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-4px)' },
         },
-        "bounce-paw": {
+        "bounce-tongue": {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-5px)' },
+          '50%': { transform: 'translateY(-7px)' },
         },
         "bounce-wheels": {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-1px)' },
         },
-        "bounce-hog": {
+        "bounce-body": {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-8px)' },
         },
@@ -45,9 +45,9 @@ module.exports = {
       animation: {
         "drive-car": 'drive-car 12s ease-in-out infinite',
         "bounce-car": 'bounce-car 0.6s ease-in-out infinite',
-        "bounce-paw": 'bounce-paw 0.6s ease-in-out infinite',
+        "bounce-tongue": 'bounce-tongue 0.6s ease-in-out infinite',
         "bounce-wheels": 'bounce-wheels 0.6s ease-in-out infinite',
-        "bounce-hog": 'bounce-hog 0.6s ease-in-out infinite',
+        "bounce-body": 'bounce-body 0.6s ease-in-out infinite',
         "typewriter": 'typewriter 1.5s steps(20, end) forwards',
         "blink": 'blink 1s infinite',
       },

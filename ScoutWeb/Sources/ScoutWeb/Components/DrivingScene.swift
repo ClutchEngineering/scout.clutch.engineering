@@ -59,13 +59,12 @@ struct DrivingScene<Content: View>: View {
             .background(.green, darkness: 700, condition: .dark)
         }
         Div {
-          // The hog mobile
           Div {
-            HogMobile()
+            Scout()
           }
           .position(.absolute)
           .placement(left: 0.5, top: 0)
-          .offset(x: -0.5, y: -0.6)
+          .offset(x: -0.5, y: -0.7)
         }
         .frame(width: .full, height: .full)
         .background(.slate, darkness: 400)

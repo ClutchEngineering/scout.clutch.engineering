@@ -2,7 +2,7 @@ import Foundation
 
 import Slipstream
 
-struct HogImage: View {
+struct ScoutImage: View {
   let url: URL?
 
   init(_ url: URL?) {
