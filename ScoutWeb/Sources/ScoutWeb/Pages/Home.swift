@@ -11,25 +11,6 @@ struct Home: View {
       additionalStylesheets: [URL(string: "/css/parallax.css")]
     ) {
       DrivingScene(showsFireworks: false, skyHeight: 50, groundHeight: 12) {
-        VStack(alignment: .center, spacing: 24) {
-          Text("Who's a good Scout? You are! Yes you are.")
-            .fontSize(.large)
-            .fontWeight(.medium)
-            .fontDesign("rounded")
-            .className("text-scout-orange-dark")
-            .textAlignment(.center)
-            .margin(.bottom, 16)
-
-          Link(URL(string: "#ios-download")) {
-            Text("Download for iOS")
-              .padding(.horizontal, 24)
-              .padding(.vertical, 12)
-              .className("bg-scout-orange hover:bg-scout-orange-dark")
-              .textColor(.white)
-              .fontWeight(.semibold)
-              .cornerRadius(.large)
-          }
-        }
       }
 
       Div {

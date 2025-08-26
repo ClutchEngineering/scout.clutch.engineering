@@ -23,8 +23,10 @@ struct DrivingScene<Content: View>: View {
         }
       }
       Container {
-        VStack(alignment: .center, spacing: 16) {
+        VStack(alignment: .leading, spacing: 0) {
           Hero()
+        }
+        VStack(alignment: .center, spacing: 16) {
           content()
         }
         .flexGap(.y, width: 48, condition: .startingAt(.medium))

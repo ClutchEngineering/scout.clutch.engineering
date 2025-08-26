@@ -11,13 +11,21 @@ struct Hero: View {
       .className("font-avenir italic text-scout-shadow rotate-slight font-tight")
       .fontLeading(.tight)
 
-    Paragraph {
-      DOMString("Sniff out the cheapest gas and chargers")
+    Div {
+      Paragraph {
+        DOMString("Find the best ")
+        Span {
+          DOMString("gas stations")
+        }
+        .id("typewriter-text")
+        .className("typewriter animate-blink")
+      }
+      .fontSize(.extraExtraLarge)
+      .fontSize(.fiveXLarge, condition: .startingAt(.medium))
+      .fontWeight(.black)
+      // .className("text-scout-orange")
+      .className("font-avenir italic text-subheadline-shadow rotate-slight")
     }
-    .fontSize(.extraExtraLarge)
-    .fontSize(.fourXLarge, condition: .startingAt(.medium))
-    .fontWeight(.black)
-    .fontDesign("rounded")
-    .className("text-scout-orange")
+    .className("typewriter-container")
   }
 }
