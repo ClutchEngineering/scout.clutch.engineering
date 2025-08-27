@@ -174,6 +174,7 @@ struct Home: View {
       }
       .background(.slate, darkness: 400)
       .background(.slate, darkness: 700, condition: .dark)
+      .className("dotted-background dark:dotted-background-dark")
     }
   }
 }

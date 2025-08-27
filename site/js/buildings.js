@@ -104,16 +104,18 @@ class BuildingSpawner {
     const group = document.createElement('div');
     group.className = 'building-group';
 
-    // Position group off-screen to the right, behind Scout
+    // Use Scout's positioning logic: top: 0 with translateY offset
+    // Scout uses offset(y: -0.7) which is about -70% of container height
+    // We want buildings offset by -50pt from Scout's position
     group.style.cssText = `
       position: absolute;
       right: -10px;
-      bottom: ${this.config.groundOffset}px;
+      top: 0;
       display: flex;
       align-items: flex-end;
       gap: 10px;
       z-index: 5;
-      transform: translateX(100vw);
+      transform: translateX(100vw) translateY(calc(-70% - 50px));
     `;
 
     // Create building elements
@@ -144,7 +146,7 @@ class BuildingSpawner {
     // Trigger animation
     requestAnimationFrame(() => {
       group.style.transition = `transform ${this.config.animationDuration}ms linear`;
-      group.style.transform = `translateX(calc(-100vw - 400px))`;
+      group.style.transform = `translateX(calc(-100vw - 400px)) translateY(calc(-70% - 50px))`;
     });
 
     // Clean up after animation completes
@@ -162,17 +164,17 @@ class BuildingSpawner {
 
 // Auto-initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Find the driving scene container (the ground section)
-  const drivingSceneContainer = document.querySelector('.h-\\[12lvh\\]');
+  // Find the ground container but use sky for positioning reference
+  const groundContainer = document.querySelector('#the-road');
 
-  if (drivingSceneContainer) {
-    // Make container relative positioned if not already
-    const computedStyle = window.getComputedStyle(drivingSceneContainer);
+  if (groundContainer) {
+    // Make sure ground container is relatively positioned
+    const computedStyle = window.getComputedStyle(groundContainer);
     if (computedStyle.position === 'static') {
-      drivingSceneContainer.style.position = 'relative';
+      groundContainer.style.position = 'relative';
     }
 
-    const spawner = new BuildingSpawner(drivingSceneContainer);
+    const spawner = new BuildingSpawner(groundContainer);
 
     // Spawn first building immediately, then start normal schedule
     spawner.spawnBuilding();

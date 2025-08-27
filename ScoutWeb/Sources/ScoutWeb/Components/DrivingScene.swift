@@ -38,6 +38,7 @@ struct DrivingScene<Content: View>: View {
       .className("h-[\(skyHeight)lvh]")
       .className("min-h-[350pt]")
       .className("md:min-h-[450pt]")
+      .id("the-sky")
 
       // The ground
       Div {
@@ -70,11 +71,13 @@ struct DrivingScene<Content: View>: View {
         .frame(width: .full, height: .full)
         .background(.slate, darkness: 400)
         .background(.slate, darkness: 700, condition: .dark)
+        .className("dotted-background dark:dotted-background-dark")
       }
       .className("overflow-x-clip")
       .frame(width: .full)
       .className("h-[\(groundHeight)lvh]")
       .position(.relative)
+      .id("the-road")
     }
   }
 }
