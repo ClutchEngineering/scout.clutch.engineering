@@ -11,51 +11,56 @@ struct Home: View {
       additionalStylesheets: [URL(string: "/css/parallax.css")]
     ) {
       DrivingScene(showsFireworks: false, skyHeight: 50, groundHeight: 12) {
-        VStack(alignment: .center, spacing: 24) {
-          Text("Please provide an email address and try again.")
-            .id("missing_email")
-            .fontWeight(.bold)
-            .fontDesign("rounded")
-            .textColor(.amber, darkness: 500)
-            .textColor(.amber, darkness: 400, condition: .dark)
-            .hidden()
-            .display(.block, condition: .init(state: .target))
-
-          Form(method: .post) {
-            ResponsiveStack(spacing: 32) {
-              TextField("Email", type: .email, name: "email")
-                .fontSize(.large)
-                .padding(.vertical, 8)
-                .padding(.horizontal, 16)
-                .outline(style: .none)
-                .ring(Color(.amber, darkness: 400), width: 4, condition: .focus)
-                .cornerRadius(.extraLarge)
-                .id("email")
-
-              Button(type: .submit) {
-                Span("Sign up for the beta")
-                  .padding(.horizontal, 16)
-                  .padding(.vertical, 8)
-                  .display(.block)
-                  .background(.amber, darkness: 500)
-                  .offset(y: -8)
-                  .offset(y: -6, condition: .hover)
-                  .offset(y: -2, condition: .active)
-                  .animation(.easeInOut, condition: .hover + .active)
-                  .cornerRadius(.extraLarge)
-              }
-              .fontSize(.large)
+        Div {
+          VStack(alignment: .center, spacing: 24) {
+            Text("Please provide an email address and try again.")
+              .id("missing_email")
               .fontWeight(.bold)
               .fontDesign("rounded")
-              .textColor(.white)
-              .background(.amber, darkness: 900)
-              .cornerRadius(.extraLarge)
-              .animation(.easeOut, condition: .active)
+              .textColor(.amber, darkness: 500)
+              .textColor(.amber, darkness: 400, condition: .dark)
+              .hidden()
+              .display(.block, condition: .init(state: .target))
+
+            Form(method: .post) {
+              VStack(spacing: 32) {
+                TextField("Email", type: .email, name: "email")
+                  .fontSize(.large)
+                  .padding(.vertical, 8)
+                  .padding(.horizontal, 16)
+                  .outline(style: .none)
+                  .ring(Color(.amber, darkness: 400), width: 4, condition: .focus)
+                  .cornerRadius(.extraLarge)
+                  .id("email")
+
+                Button(type: .submit) {
+                  Span("Sign up for the beta")
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .display(.block)
+                    .background(.amber, darkness: 500)
+                    .offset(y: -8)
+                    .offset(y: -6, condition: .hover)
+                    .offset(y: -2, condition: .active)
+                    .animation(.easeInOut, condition: .hover + .active)
+                    .cornerRadius(.extraLarge)
+                }
+                .fontSize(.large)
+                .fontWeight(.bold)
+                .fontDesign("rounded")
+                .className("text-scout-border")
+                .background(.amber, darkness: 900)
+                .cornerRadius(.extraLarge)
+                .animation(.easeOut, condition: .active)
+              }
+              .alignItems(.center)
             }
-            .alignItems(.center)
-            .margin(.top, 48, condition: .mobileOnly)
           }
         }
+        .className("chat-bubble")
+        .frame(maxWidth: 600)
+        .margin(.horizontal, .auto)
+        .margin(.bottom, 48)
       }
 
       Div {
