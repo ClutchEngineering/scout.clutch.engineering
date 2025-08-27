@@ -164,6 +164,7 @@ module.exports = {
           'border-left': '12px solid transparent',
           'border-right': '12px solid transparent',
           'border-top': '12px solid #F5ECD3',
+          'filter': 'drop-shadow(-2px 2px 0px #32312B) drop-shadow(-2px 8px 0px #32312B)',
         },
         '.chat-bubble::before': {
           'content': '""',
@@ -185,33 +186,33 @@ module.exports = {
           },
           '.chat-bubble::after': {
             'border-top-color': '#374151',
+            'filter': 'drop-shadow(-2px 2px 0px #32312B) drop-shadow(-4px 4px 0px #32312B)',
           },
           '.chat-bubble::before': {
             'border-top-color': '#32312B',
           },
         },
-        '.comic-strip-grid': {
+        '.info-grid': {
           'display': 'grid',
-          'grid-template-columns': 'repeat(auto-fit, minmax(280px, 1fr))',
+          'grid-template-columns': '1fr',
           'gap': '2rem',
           'width': '100%',
         },
-        '.comic-panel': {
-          'background': '#ffffff',
-          'border': '4px solid #32312B',
-          'border-radius': '1rem',
-          'box-shadow': '8px 8px 0px #32312B',
-          'position': 'relative',
-          'transition': 'transform 0.2s ease',
+        '@media (min-width: 768px)': {
+          '.info-grid': {
+            'grid-template-columns': 'repeat(2, 1fr)',
+          },
         },
-        '.comic-panel:hover': {
-          'transform': 'translateY(-4px)',
-          'box-shadow': '12px 12px 0px #32312B',
+        '.info-card': {
+          'background': '#ffffff',
+          'border-radius': '0.5rem',
+          'border': '1px solid #e5e7eb',
+          'padding': '0',
         },
         '@media (prefers-color-scheme: dark)': {
-          '.comic-panel': {
+          '.info-card': {
             'background': '#374151',
-            'border-color': '#32312B',
+            'border-color': '#4b5563',
           },
         },
         '.comic-speech-bubble': {
@@ -264,6 +265,17 @@ module.exports = {
         },
         '.scout-button-shadow:active': {
           'box-shadow': '-4px 4px 0px #78350f',
+        },
+        '.sr-only': {
+          'position': 'absolute',
+          'width': '1px',
+          'height': '1px',
+          'padding': '0',
+          'margin': '-1px',
+          'overflow': 'hidden',
+          'clip': 'rect(0, 0, 0, 0)',
+          'white-space': 'nowrap',
+          'border': '0',
         }
       })
     }),
