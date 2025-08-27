@@ -13,7 +13,7 @@ class BuildingSpawner {
     this.config = {
       minSpawnInterval: 0,
       maxSpawnInterval: 1000,
-      animationDuration: 25000, // 25 seconds to cross screen
+      animationDuration: 25000, // Time to cross screen
       buildingScale: 0.4, // Scale buildings to 40% of original size
       groundOffset: 100, // Offset from bottom of container
 
@@ -21,7 +21,7 @@ class BuildingSpawner {
       buildingSightings: [
         {
           buildings: ['GasStation.png', 'DieselPump.png'],
-          weight: 0.15 // 15% chance
+          weight: 0.2
         },
         {
           buildings: ['GasStation.png', 'GasPump.png', 'DieselPump.png'],
@@ -29,7 +29,15 @@ class BuildingSpawner {
         },
         {
           buildings: ['GasStation.png', 'GasPump.png', 'DieselPump.png', 'AirPump.png'],
-          weight: 0.25
+          weight: 0.4
+        },
+        {
+          buildings: ['GasStation.png', 'GasPump.png', 'AirPump.png', 'Vacuum.png'],
+          weight: 0.3
+        },
+        {
+          buildings: ['GasStation.png', 'GasPump.png', 'DieselPump.png', 'AirPump.png', 'Vacuum.png'],
+          weight: 0.2
         },
       ]
     };
@@ -55,18 +63,17 @@ class BuildingSpawner {
   scheduleNextSpawn() {
     if (!this.isRunning) return;
 
-    // Don't spawn if there's already a building group visible
-    if (this.buildings.length > 0) {
-      this.spawnTimer = setTimeout(() => {
-        this.scheduleNextSpawn();
-      }, 1000); // Check again in 1 second
-      return;
-    }
-
-    const delay = Math.random() * (this.config.maxSpawnInterval - this.config.minSpawnInterval) + this.config.minSpawnInterval;
+    // Allow up to 2 building groups at once
+    // Spawn next building when current one is halfway through (after half the animation duration)
+    const delay = this.buildings.length === 0 ?
+      Math.random() * (this.config.maxSpawnInterval - this.config.minSpawnInterval) + this.config.minSpawnInterval :
+      this.config.animationDuration / 2; // Halfway through current animation
 
     this.spawnTimer = setTimeout(() => {
-      this.spawnBuilding();
+      // Only spawn if we have less than 2 building groups
+      if (this.buildings.length < 2) {
+        this.spawnBuilding();
+      }
       this.scheduleNextSpawn();
     }, delay);
   }
@@ -102,7 +109,7 @@ class BuildingSpawner {
     // Position group off-screen to the right, behind Scout
     group.style.cssText = `
       position: absolute;
-      right: -100px;
+      right: -10px;
       bottom: ${this.config.groundOffset}px;
       display: flex;
       align-items: flex-end;
