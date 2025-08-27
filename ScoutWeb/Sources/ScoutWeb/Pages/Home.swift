@@ -70,6 +70,7 @@ struct Home: View {
                 .frame(width: 80, height: 80)
                 .className("bg-scout-orange bg-opacity-20")
                 .cornerRadius(.full)
+                .display(.flex)
                 .alignItems(.center)
                 .justifyContent(.center)
 
@@ -93,6 +94,7 @@ struct Home: View {
                 .frame(width: 80, height: 80)
                 .className("bg-scout-orange bg-opacity-20")
                 .cornerRadius(.full)
+                .display(.flex)
                 .alignItems(.center)
                 .justifyContent(.center)
 
@@ -116,6 +118,7 @@ struct Home: View {
                 .frame(width: 80, height: 80)
                 .className("bg-scout-orange bg-opacity-20")
                 .cornerRadius(.full)
+                .display(.flex)
                 .alignItems(.center)
                 .justifyContent(.center)
 
