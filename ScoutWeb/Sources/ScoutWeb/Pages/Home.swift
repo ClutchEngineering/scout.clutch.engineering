@@ -61,6 +61,124 @@ struct Home: View {
         .margin(.horizontal, .auto)
         .margin(.bottom, 48)
       }
+
+      // Product pitch.
+      Div {
+        Container {
+          VStack(alignment: .center, spacing: 64) {
+            HStack(spacing: 32) {
+              VStack(alignment: .center, spacing: 16) {
+                Div {
+                  Text("⛽")
+                    .fontSize(.fourXLarge)
+                }
+                .frame(width: 80, height: 80)
+                .className("bg-scout-orange bg-opacity-20")
+                .cornerRadius(.full)
+                .display(.flex)
+                .alignItems(.center)
+                .justifyContent(.center)
+
+                Text("Document Stations")
+                  .fontSize(.extraLarge)
+                  .fontWeight(.semibold)
+                  .className("text-scout-orange-darker")
+
+                Text("Sniff out gas stations and mark their prices to build the ultimate territory map for your pack.")
+                  .textColor(.zinc, darkness: 600)
+                  .textColor(.zinc, darkness: 300, condition: .dark)
+                  .textAlignment(.center)
+              }
+              .frame(maxWidth: 250)
+
+              VStack(alignment: .center, spacing: 16) {
+                Div {
+                  Text("💰")
+                    .fontSize(.fourXLarge)
+                }
+                .frame(width: 80, height: 80)
+                .className("bg-scout-orange bg-opacity-20")
+                .cornerRadius(.full)
+                .display(.flex)
+                .alignItems(.center)
+                .justifyContent(.center)
+
+                Text("Share Data")
+                  .fontSize(.extraLarge)
+                  .fontWeight(.semibold)
+                  .className("text-scout-orange-darker")
+
+                Text("Share your discoveries with the global pack through OpenStreetMap - every good scout shares intel!")
+                  .textColor(.zinc, darkness: 600)
+                  .textColor(.zinc, darkness: 300, condition: .dark)
+                  .textAlignment(.center)
+              }
+              .frame(maxWidth: 250)
+
+              VStack(alignment: .center, spacing: 16) {
+                Div {
+                  Text("📱")
+                    .fontSize(.fourXLarge)
+                }
+                .frame(width: 80, height: 80)
+                .className("bg-scout-orange bg-opacity-20")
+                .cornerRadius(.full)
+                .display(.flex)
+                .alignItems(.center)
+                .justifyContent(.center)
+
+                Text("Build Community")
+                  .fontSize(.extraLarge)
+                  .fontWeight(.semibold)
+                  .className("text-scout-orange-darker")
+
+                Text("Join fellow scouts creating the most accurate gas price database - every tail wag counts!")
+                  .textColor(.zinc, darkness: 600)
+                  .textColor(.zinc, darkness: 300, condition: .dark)
+                  .textAlignment(.center)
+              }
+              .frame(maxWidth: 250)
+            }
+            .alignItems(.center)
+
+            VStack(alignment: .center, spacing: 24) {
+              Text("Ready to join Scout?")
+                .fontSize(.extraExtraExtraLarge)
+                .fontSize(.fourXLarge, condition: .desktop)
+                .fontWeight(.heavy)
+                .fontDesign("rounded")
+                .className("text-scout-orange")
+                .textAlignment(.center)
+
+              Text("Join the pack and become a top scouter in your territory!")
+                .fontSize(.extraLarge)
+                .fontWeight(.medium)
+                .textColor(.zinc, darkness: 600)
+                .textColor(.zinc, darkness: 300, condition: .dark)
+                .textAlignment(.center)
+
+              Link(URL(string: "#ios-download")) {
+                Text("Get Scout for iOS")
+                  .padding(.horizontal, 32)
+                  .padding(.vertical, 16)
+                  .className("bg-scout-orange hover:bg-scout-orange-dark")
+                  .textColor(.white)
+                  .fontWeight(.bold)
+                  .fontSize(.large)
+                  .cornerRadius(.extraLarge)
+              }
+            }
+          }
+          .padding(.bottom, 32)
+        }
+        .background(.white)
+        .padding(.vertical, 32)
+        .cornerRadius(.extraLarge)
+      }
+      .background(.slate, darkness: 400)
+      .background(.slate, darkness: 700, condition: .dark)
+      .padding(.bottom, 32)
+      .className("dotted-background dark:dotted-background-dark")
     }
   }
 }
