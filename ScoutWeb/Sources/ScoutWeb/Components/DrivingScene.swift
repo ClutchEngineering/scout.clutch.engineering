@@ -26,7 +26,7 @@ struct DrivingScene<Content: View>: View {
         VStack(alignment: .leading, spacing: 0) {
           Hero()
         }
-        .margin(.bottom, 112)
+        .margin(.bottom, 48)
         VStack(alignment: .center, spacing: 16) {
           content()
         }
@@ -34,10 +34,9 @@ struct DrivingScene<Content: View>: View {
         .textAlignment(.center)
       }
       .padding(.vertical, 32)
-      .frame(minHeight: 500)
       .className("h-[\(skyHeight)lvh]")
-      .className("min-h-[350pt]")
-      .className("md:min-h-[450pt]")
+      .className("min-h-[300pt]")
+      .className("md:min-h-[400pt]")
       .id("the-sky")
 
       // The ground
