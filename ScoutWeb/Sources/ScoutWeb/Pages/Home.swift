@@ -66,7 +66,7 @@ struct Home: View {
       Div {
         Container {
           VStack(alignment: .center, spacing: 64) {
-            HStack(spacing: 32) {
+            HStack(alignment: .top, spacing: 32) {
               VStack(alignment: .center, spacing: 16) {
                 Div {
                   Text("⛽")
@@ -139,7 +139,6 @@ struct Home: View {
               }
               .frame(maxWidth: 250)
             }
-            .alignItems(.center)
 
             VStack(alignment: .center, spacing: 24) {
               Text("Ready to join Scout?")
