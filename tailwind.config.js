@@ -149,7 +149,7 @@ module.exports = {
           'background': '#F5ECD3',
           'border-radius': '1rem',
           'padding': '1.5rem',
-          'box-shadow': '0 20px 40px -10px rgba(0, 0, 0, 0.3), 0 10px 25px -5px rgba(0, 0, 0, 0.15)',
+          'box-shadow': '-2px 2px 0px #32312B, -4px 4px 0px #32312B, -6px 6px 0px #32312B',
           'border': '6px solid #32312B',
           'z-index': '30',
         },
@@ -189,6 +189,81 @@ module.exports = {
           '.chat-bubble::before': {
             'border-top-color': '#32312B',
           },
+        },
+        '.comic-strip-grid': {
+          'display': 'grid',
+          'grid-template-columns': 'repeat(auto-fit, minmax(280px, 1fr))',
+          'gap': '2rem',
+          'width': '100%',
+        },
+        '.comic-panel': {
+          'background': '#ffffff',
+          'border': '4px solid #32312B',
+          'border-radius': '1rem',
+          'box-shadow': '8px 8px 0px #32312B',
+          'position': 'relative',
+          'transition': 'transform 0.2s ease',
+        },
+        '.comic-panel:hover': {
+          'transform': 'translateY(-4px)',
+          'box-shadow': '12px 12px 0px #32312B',
+        },
+        '@media (prefers-color-scheme: dark)': {
+          '.comic-panel': {
+            'background': '#374151',
+            'border-color': '#32312B',
+          },
+        },
+        '.comic-speech-bubble': {
+          'position': 'relative',
+          'background': '#F5ECD3',
+          'border': '2px solid #32312B',
+          'border-radius': '1rem',
+          'padding': '0.75rem 1rem',
+          'font-style': 'italic',
+          'margin-top': '1rem',
+        },
+        '.comic-speech-bubble::after': {
+          'content': '\"\"',
+          'position': 'absolute',
+          'top': '-8px',
+          'left': '50%',
+          'transform': 'translateX(-50%)',
+          'width': '0',
+          'height': '0',
+          'border-left': '8px solid transparent',
+          'border-right': '8px solid transparent',
+          'border-bottom': '8px solid #F5ECD3',
+        },
+        '.comic-speech-bubble::before': {
+          'content': '\"\"',
+          'position': 'absolute',
+          'top': '-11px',
+          'left': '50%',
+          'transform': 'translateX(-50%)',
+          'width': '0',
+          'height': '0',
+          'border-left': '10px solid transparent',
+          'border-right': '10px solid transparent',
+          'border-bottom': '10px solid #32312B',
+        },
+        '@media (prefers-color-scheme: dark)': {
+          '.comic-speech-bubble': {
+            'background': '#d1d5db',
+            'color': '#111827',
+          },
+          '.comic-speech-bubble::after': {
+            'border-bottom-color': '#d1d5db',
+          },
+        },
+        '.scout-button-shadow': {
+          'box-shadow': '-4px 4px 0px #78350f, -3px 3px 0px #78350f, -2px 2px 0px #78350f, -1px 1px 0px #78350f',
+        },
+        '.scout-button-shadow:hover': {
+          'box-shadow': '-4px 4px 0px #78350f, -3px 3px 0px #78350f',
+        },
+        '.scout-button-shadow:active': {
+          'box-shadow': '-4px 4px 0px #78350f',
         }
       })
     }),

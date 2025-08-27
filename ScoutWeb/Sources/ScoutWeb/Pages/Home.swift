@@ -39,17 +39,16 @@ struct Home: View {
                     .padding(.vertical, 8)
                     .display(.block)
                     .background(.amber, darkness: 500)
-                    .offset(y: -8)
-                    .offset(y: -6, condition: .hover)
-                    .offset(y: -2, condition: .active)
+                    .offset(x: 0, y: 0)
+                    .offset(x: -2, y: 2, condition: .hover)
+                    .offset(x: -4, y: 4, condition: .active)
                     .animation(.easeInOut, condition: .hover + .active)
                     .cornerRadius(.extraLarge)
                 }
                 .fontSize(.large)
                 .fontWeight(.bold)
                 .fontDesign("rounded")
-                .className("text-scout-border")
-                .background(.amber, darkness: 900)
+                .className("text-scout-border scout-button-shadow")
                 .cornerRadius(.extraLarge)
                 .animation(.easeOut, condition: .active)
               }
@@ -63,84 +62,86 @@ struct Home: View {
         .margin(.bottom, 48)
       }
 
-      // Product pitch.
+      // Comic strip product pitch
       Div {
         Container {
-          VStack(alignment: .center, spacing: 64) {
-            HStack(spacing: 32) {
-              VStack(alignment: .center, spacing: 16) {
-                Div {
-                  Text("⛽")
-                    .fontSize(.fourXLarge)
+          VStack(alignment: .center, spacing: 48) {
+            // Comic strip title
+            Text("The Scout Story")
+              .fontSize(.extraExtraExtraLarge)
+              .fontSize(.fourXLarge, condition: .desktop)
+              .fontWeight(.black)
+              .fontDesign("rounded")
+              .className("text-scout-orange")
+              .textAlignment(.center)
+              .margin(.bottom, 24)
+
+            // Comic panels in a grid
+            Div {
+              // Panel 1: Discovery
+              Div {
+                VStack(spacing: 20) {
+                  Text("📍")
+                    .fontSize(.sixXLarge)
+
+                  Text("DISCOVER")
+                    .fontSize(.large)
+                    .fontWeight(.black)
+                    .className("text-scout-orange-darker")
+
+                  Text("\"I found a gas station with great prices!\"")
+                    .fontSize(.base)
+                    .fontWeight(.medium)
+                    .textAlignment(.center)
+                    .className("comic-speech-bubble")
                 }
-                .frame(width: 80, height: 80)
-                .className("bg-scout-orange bg-opacity-20")
-                .cornerRadius(.full)
-                .display(.flex)
-                .alignItems(.center)
-                .justifyContent(.center)
-
-                Text("Document Stations")
-                  .fontSize(.extraLarge)
-                  .fontWeight(.semibold)
-                  .className("text-scout-orange-darker")
-
-                Text("Sniff out gas stations and mark their prices to build the ultimate territory map for your pack.")
-                  .textColor(.zinc, darkness: 600)
-                  .textColor(.zinc, darkness: 300, condition: .dark)
-                  .textAlignment(.center)
+                .padding(.all, 24)
               }
-              .frame(maxWidth: 250)
+              .className("comic-panel")
 
-              VStack(alignment: .center, spacing: 16) {
-                Div {
-                  Text("💰")
-                    .fontSize(.fourXLarge)
+              // Panel 2: Document
+              Div {
+                VStack(spacing: 20) {
+                  Text("📝")
+                    .fontSize(.sixXLarge)
+
+                  Text("DOCUMENT")
+                    .fontSize(.large)
+                    .fontWeight(.black)
+                    .className("text-scout-orange-darker")
+
+                  Text("\"Let me add this to the map for everyone!\"")
+                    .fontSize(.base)
+                    .fontWeight(.medium)
+                    .textAlignment(.center)
+                    .className("comic-speech-bubble")
                 }
-                .frame(width: 80, height: 80)
-                .className("bg-scout-orange bg-opacity-20")
-                .cornerRadius(.full)
-                .display(.flex)
-                .alignItems(.center)
-                .justifyContent(.center)
-
-                Text("Share Data")
-                  .fontSize(.extraLarge)
-                  .fontWeight(.semibold)
-                  .className("text-scout-orange-darker")
-
-                Text("Share your discoveries with the global pack through OpenStreetMap - every good scout shares intel!")
-                  .textColor(.zinc, darkness: 600)
-                  .textColor(.zinc, darkness: 300, condition: .dark)
-                  .textAlignment(.center)
+                .padding(.all, 24)
               }
-              .frame(maxWidth: 250)
+              .className("comic-panel")
 
-              VStack(alignment: .center, spacing: 16) {
-                Div {
-                  Text("📱")
-                    .fontSize(.fourXLarge)
+              // Panel 3: Share
+              Div {
+                VStack(spacing: 20) {
+                  Text("🌍")
+                    .fontSize(.sixXLarge)
+
+                  Text("SHARE")
+                    .fontSize(.large)
+                    .fontWeight(.black)
+                    .className("text-scout-orange-darker")
+
+                  Text("\"Now the whole pack knows about it!\"")
+                    .fontSize(.base)
+                    .fontWeight(.medium)
+                    .textAlignment(.center)
+                    .className("comic-speech-bubble")
                 }
-                .frame(width: 80, height: 80)
-                .className("bg-scout-orange bg-opacity-20")
-                .cornerRadius(.full)
-                .display(.flex)
-                .alignItems(.center)
-                .justifyContent(.center)
-
-                Text("Build Community")
-                  .fontSize(.extraLarge)
-                  .fontWeight(.semibold)
-                  .className("text-scout-orange-darker")
-
-                Text("Join fellow scouts creating the most accurate gas price database - every tail wag counts!")
-                  .textColor(.zinc, darkness: 600)
-                  .textColor(.zinc, darkness: 300, condition: .dark)
-                  .textAlignment(.center)
+                .padding(.all, 24)
               }
-              .frame(maxWidth: 250)
+              .className("comic-panel")
             }
-            .alignItems(.center)
+            .className("comic-strip-grid")
 
             VStack(alignment: .center, spacing: 24) {
               Text("Ready to join Scout?")
