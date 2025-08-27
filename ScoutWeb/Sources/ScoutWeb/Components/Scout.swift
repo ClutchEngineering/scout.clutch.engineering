@@ -13,8 +13,6 @@ struct Scout: View {
         ScoutImage(URL(string: "gfx/scout/Layer-5-B-Upperbody.png"))  .className("motion-safe:animate-bounce-body")
         ScoutImage(URL(string: "gfx/scout/Layer-6-E-Tongue.png"))     .className("motion-safe:animate-bounce-tongue")
         ScoutImage(URL(string: "gfx/scout/Layer-7-B-Nose.png"))       .className("motion-safe:animate-bounce-body")
-          .className("active:opacity-0")
-          .animation(.easeInOut)
       }
     }
     .position(.relative)
@@ -22,4 +20,3 @@ struct Scout: View {
     .className("motion-safe:animate-drive-car")
   }
 }
-

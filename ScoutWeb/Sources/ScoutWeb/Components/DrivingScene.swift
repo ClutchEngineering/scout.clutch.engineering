@@ -65,6 +65,7 @@ struct DrivingScene<Content: View>: View {
           .position(.absolute)
           .placement(left: 0.5, top: 0)
           .offset(x: -0.5, y: -0.7)
+          .className("z-20")
         }
         .frame(width: .full, height: .full)
         .background(.slate, darkness: 400)

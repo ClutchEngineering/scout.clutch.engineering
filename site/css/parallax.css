@@ -60,7 +60,21 @@
   height: 64px;
 }
 
+/* Building animations */
+.building-group {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.building-group img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 @media (prefers-reduced-motion) {
+  .building-group {
+    display: none !important;
+  }
+  
   .shape:nth-child(1),
   .shape:nth-child(2),
   .shape:nth-child(3),

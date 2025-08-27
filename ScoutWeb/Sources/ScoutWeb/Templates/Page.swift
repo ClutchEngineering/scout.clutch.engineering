@@ -67,6 +67,7 @@ struct Page<Content: View>: View {
         }
 
         Script(URL(string: "/js/typewriter.js"))
+        Script(URL(string: "/js/buildings.js"))
       }
       Body {
         content()
