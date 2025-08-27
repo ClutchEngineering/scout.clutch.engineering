@@ -115,7 +115,7 @@ class BuildingSpawner {
       align-items: flex-end;
       gap: 10px;
       z-index: 5;
-      transform: translateX(100vw) translateY(calc(-70% - 50px));
+      transform: translateX(100vw) translateY(calc(-8vh - 125px));
     `;
 
     // Create building elements
@@ -146,7 +146,7 @@ class BuildingSpawner {
     // Trigger animation
     requestAnimationFrame(() => {
       group.style.transition = `transform ${this.config.animationDuration}ms linear`;
-      group.style.transform = `translateX(calc(-100vw - 400px)) translateY(calc(-70% - 50px))`;
+      group.style.transform = `translateX(calc(-100vw - 400px)) translateY(calc(-8vh - 125px))`;
     });
 
     // Clean up after animation completes

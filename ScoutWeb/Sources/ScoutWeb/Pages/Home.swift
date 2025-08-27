@@ -63,6 +63,7 @@ struct Home: View {
         .margin(.bottom, 48)
       }
 
+      // Product pitch.
       Div {
         Container {
           VStack(alignment: .center, spacing: 64) {
