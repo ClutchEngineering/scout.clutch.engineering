@@ -10,7 +10,7 @@ struct Home: View {
       description: "Join the Scout community documenting gas prices and station information",
       additionalStylesheets: [URL(string: "/css/parallax.css")]
     ) {
-      DrivingScene(showsFireworks: false, skyHeight: 50, groundHeight: 12) {
+      DrivingScene(showsFireworks: false, skyHeight: 32, groundHeight: 12) {
         Div {
           VStack(alignment: .center, spacing: 24) {
             Text("Please provide an email address and try again.")
@@ -22,7 +22,7 @@ struct Home: View {
               .hidden()
               .display(.block, condition: .init(state: .target))
 
-            Form(method: .post) {
+            Form(method: .post, url: URL(string: "https://register.scout.clutch.engineering/")) {
               VStack(spacing: 32) {
                 TextField("Email", type: .email, name: "email")
                   .fontSize(.large)
