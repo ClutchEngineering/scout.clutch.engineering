@@ -65,9 +65,7 @@ class BuildingSpawner {
 
     // Allow up to 2 building groups at once
     // Spawn next building when current one is halfway through (after half the animation duration)
-    const delay = this.buildings.length === 0 ?
-      Math.random() * (this.config.maxSpawnInterval - this.config.minSpawnInterval) + this.config.minSpawnInterval :
-      this.config.animationDuration / 2; // Halfway through current animation
+    const delay = this.buildings.length === 0 ? 0 : this.config.animationDuration / 4; // Partway through current animation
 
     this.spawnTimer = setTimeout(() => {
       // Only spawn if we have less than 2 building groups
