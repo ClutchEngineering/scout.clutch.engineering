@@ -90,28 +90,56 @@ module.exports = {
         { values: theme('extrude') }
       )
       addUtilities({
-        '.text-scout-shadow': {
-          'color': '#ffffff',
-          'text-shadow': '-1px 1px 0px #32312B, -2px 2px 0px #32312B, -3px 3px 0px #32312B, -4px 4px 0px #32312B',
-          '-webkit-text-stroke': '6px #32312B',
-        },
-        '@media (prefers-color-scheme: dark)': {
+        '@media (min-width: 768px)': {
           '.text-scout-shadow': {
             'color': '#ffffff',
             'text-shadow': '-1px 1px 0px #32312B, -2px 2px 0px #32312B, -3px 3px 0px #32312B, -4px 4px 0px #32312B',
             '-webkit-text-stroke': '6px #32312B',
           },
+          '@media (prefers-color-scheme: dark)': {
+            '.text-scout-shadow': {
+              'color': '#ffffff',
+              'text-shadow': '-1px 1px 0px #32312B, -2px 2px 0px #32312B, -3px 3px 0px #32312B, -4px 4px 0px #32312B',
+              '-webkit-text-stroke': '6px #32312B',
+            },
+          },
         },
-        '.text-subheadline-shadow': {
+        '.text-scout-shadow': {
           'color': '#ffffff',
           'text-shadow': '-1px 1px 0px #32312B, -2px 2px 0px #32312B',
-          '-webkit-text-stroke': '2px #32312B',
+          '-webkit-text-stroke': '3px #32312B',
         },
         '@media (prefers-color-scheme: dark)': {
+          '.text-scout-shadow': {
+            'color': '#ffffff',
+            'text-shadow': '-1px 1px 0px #32312B, -2px 2px 0px #32312B',
+            '-webkit-text-stroke': '3px #32312B',
+          },
+        },
+        '@media (min-width: 768px)': {
           '.text-subheadline-shadow': {
             'color': '#ffffff',
             'text-shadow': '-1px 1px 0px #32312B, -2px 2px 0px #32312B',
             '-webkit-text-stroke': '2px #32312B',
+          },
+          '@media (prefers-color-scheme: dark)': {
+            '.text-subheadline-shadow': {
+              'color': '#ffffff',
+              'text-shadow': '-1px 1px 0px #32312B, -2px 2px 0px #32312B',
+              '-webkit-text-stroke': '2px #32312B',
+            },
+          },
+        },
+        '.text-subheadline-shadow': {
+          'color': '#ffffff',
+          'text-shadow': '-1px 1px 0px #32312B',
+          '-webkit-text-stroke': '1px #32312B',
+        },
+        '@media (prefers-color-scheme: dark)': {
+          '.text-subheadline-shadow': {
+            'color': '#ffffff',
+            'text-shadow': '-1px 1px 0px #32312B',
+            '-webkit-text-stroke': '1px #32312B',
           },
         },
         '.rotate-slight': {

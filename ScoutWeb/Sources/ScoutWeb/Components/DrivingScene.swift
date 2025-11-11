@@ -35,7 +35,7 @@ struct DrivingScene<Content: View>: View {
       }
       .padding(.vertical, 32)
       .className("h-[\(skyHeight)lvh]")
-      .className("min-h-[300pt]")
+      .className("min-h-[400pt]")
       .className("md:min-h-[400pt]")
       .id("the-sky")
 

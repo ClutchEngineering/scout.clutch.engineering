@@ -10,6 +10,7 @@ struct Hero: View {
       .fontWeight(.black)
       .className("font-avenir italic text-scout-shadow rotate-slight font-tight")
       .fontLeading(.tight)
+      .padding(.bottom, 12, condition: .mobileOnly)
 
     Div {
       Paragraph {
