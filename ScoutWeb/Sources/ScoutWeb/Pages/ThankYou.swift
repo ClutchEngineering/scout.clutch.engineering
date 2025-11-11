@@ -7,7 +7,7 @@ struct ThankYou: View {
 
     Page(
       path: "/thank-you/",
-      description: "Thank you for signing up for the Scout beta!",
+      description: "We'll let you know when we launch!",
       additionalStylesheets: [
         URL(string: "/css/parallax.css"),
         URL(string: "/css/fireworks.css"),
@@ -16,7 +16,7 @@ struct ThankYou: View {
       DrivingScene(showsFireworks: true, skyHeight: 32, groundHeight: 12) {
         VStack(alignment: .center, spacing: 32) {
           VStack(alignment: .center, spacing: 32) {
-            Paragraph("Thank you!")
+            Paragraph("Stay tuned for updates as we prepare to launch Scout!")
               .fontSize(.large)
               .fontSize(.extraExtraLarge, condition: .startingAt(.medium))
               .fontWeight(.black)

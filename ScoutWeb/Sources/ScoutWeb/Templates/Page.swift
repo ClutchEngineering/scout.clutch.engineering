@@ -80,7 +80,7 @@ struct Page<Content: View>: View {
         Footer {
           Container {
             VStack(alignment: .center, spacing: 16) {
-              Link(URL(string: "https://github.com/jverkoey/slipstream")) {
+              Link(URL(string: "https://github.com/ClutchEngineering/slipstream")) {
                 Image(URL(string: "/gfx/built-with-slipstream.svg"))
                   .accessibilityLabel("Built with Slipstream")
               }
