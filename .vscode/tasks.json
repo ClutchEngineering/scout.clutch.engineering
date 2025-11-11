@@ -2,73 +2,57 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build Swift Package",
-      "type": "shell",
-      "command": "swift",
-      "args": ["build", "-c", "debug", "--package-path", "ScoutWeb"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared"
-      },
-      "problemMatcher": []
+        "label": "Tailwind CSS Watch",
+        "type": "shell",
+        "command": "npx",
+        "args": [
+            "tailwindcss",
+            "-i",
+            "tailwind.css",
+            "-o",
+            "./site/css/main.css",
+            "--watch"
+        ],
+        "presentation": {
+            "reveal": "always",
+            "panel": "dedicated",
+            "group": "dev-server"
+        },
+        "isBackground": true,
+        "problemMatcher": []
     },
     {
-      "label": "Generate HTML with ScoutWeb",
-      "type": "shell",
-      "command": "swift",
-      "args": ["run", "--package-path", "ScoutWeb", "ScoutWeb"],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared"
-      },
-      "problemMatcher": []
+        "label": "Start HTTP Server",
+        "type": "shell",
+        "command": "python3",
+        "args": [
+            "-m",
+            "http.server",
+            "-d",
+            "site/",
+            "8091"
+        ],
+        "presentation": {
+            "reveal": "always",
+            "panel": "dedicated",
+            "group": "dev-server"
+        },
+        "isBackground": true,
+        "problemMatcher": []
     },
     {
-      "label": "Build Tailwind CSS",
-      "type": "shell",
-      "command": "npm",
-      "args": ["run", "build-css-once"],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "Start Development Server",
-      "type": "shell",
-      "command": "npm",
-      "args": ["run", "dev"],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared"
-      },
-      "problemMatcher": [],
-      "isBackground": true
-    },
-    {
-      "label": "Full Build & Serve",
-      "dependsOrder": "sequence",
+      "label": "Dev Environment",
+      "dependsOrder": "parallel",
       "dependsOn": [
-        "Generate HTML with ScoutWeb",
-        "Build Tailwind CSS",
-        "Start Development Server"
-      ]
+        "Tailwind CSS Watch",
+        "Start HTTP Server"
+      ],
+      "presentation": {
+          "reveal": "always",
+          "panel": "shared",
+          "group": "dev-server"
+      },
+      "problemMatcher": []
     }
   ]
 }

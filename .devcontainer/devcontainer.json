@@ -20,7 +20,8 @@
       "extensions": [
         "bradlc.vscode-tailwindcss",
         "swiftlang.swift-vscode",
-        "ms-vscode.live-server"
+        "ms-vscode.live-server",
+        "anthropic.claude-code"
       ],
       "settings": {
         "tailwindCSS.includeLanguages": {

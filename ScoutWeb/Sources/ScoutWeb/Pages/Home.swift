@@ -8,7 +8,8 @@ struct Home: View {
     Page(
       path: "/",
       description: "Join the Scout community documenting gas prices and station information",
-      additionalStylesheets: [URL(string: "/css/parallax.css")]
+      additionalStylesheets: [URL(string: "/css/parallax.css")],
+      scripts: [URL(string: "/js/signup-form.js")]
     ) {
       DrivingScene(showsFireworks: false, skyHeight: 32, groundHeight: 12) {
         Div {

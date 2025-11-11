@@ -21,6 +21,7 @@ struct Page<Content: View>: View {
     backgroundColor: Color? = nil,
     darkModeBackgroundColor: Color? = nil,
     additionalStylesheets: [URL?] = [],
+    scripts: Set<URL?> = Set(),
     @ViewBuilder content: @escaping @Sendable () -> Content
   ) {
     self.path = path
@@ -29,6 +30,7 @@ struct Page<Content: View>: View {
     self.backgroundColor = backgroundColor
     self.darkModeBackgroundColor = darkModeBackgroundColor
     self.additionalStylesheets = additionalStylesheets
+    self.scripts = scripts
     self.content = content
   }
 
@@ -68,6 +70,9 @@ struct Page<Content: View>: View {
 
         Script(URL(string: "/js/typewriter.js"))
         Script(URL(string: "/js/buildings.js"))
+        for script in scripts.compactMap({ $0 }).sorted(by: { $0.absoluteString < $1.absoluteString }) {
+          Script(script)
+        }
       }
       Body {
         content()
@@ -115,6 +120,7 @@ struct Page<Content: View>: View {
   private let backgroundColor: Color?
   private let darkModeBackgroundColor: Color?
   private let additionalStylesheets: [URL?]
+  private let scripts: Set<URL?>
   @ViewBuilder private let content: @Sendable () -> Content
 }
 
